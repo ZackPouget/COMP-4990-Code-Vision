@@ -1,0 +1,142 @@
+// Variables and Mixins
+$slate: #333333;
+$green: #38A169;
+$blue: #1e90ff;
+
+@mixin button {
+    @include input-container-member;
+    cursor: pointer;
+    border: none;
+}
+
+@mixin input-container-member {
+    box-sizing: border-box;
+    height: 2.5rem;
+    outline: none;
+}
+
+@mixin dynamic-width {
+    width: calc(100% - 2rem);
+    max-width: 60rem;
+}
+
+//Main Interface
+
+.chat-interface {
+    min-width: 100%;
+    min-height: 100vh;
+    background-image: url('./Images/appInterface.jpg'); /* AI Generated Image */
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;
+    color: white;
+}
+
+.banner {
+    text-align: center;
+    color: white; 
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem; 
+    line-height: 2rem; 
+    font-weight: 400;
+    padding: {
+        bottom: 1rem;
+        top: 1rem;
+    }
+}
+
+.input-container {
+    @include dynamic-width;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    margin: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.message-input {
+    @include input-container-member();
+    border: 0.15rem solid lighten($slate, 10%);
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    background-color: $slate;
+    color: white;
+    padding: 0.5rem;
+    flex-grow: 1;
+}
+
+.send-button {
+    @include button;
+    background-color: $green;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.1rem; 
+    line-height: 24px;
+}
+
+.context-button {
+    @include button;
+    background-color: $blue;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+//Message Card
+
+.message-card-container {
+    @include dynamic-width;
+    position: relative;
+    background-color: $slate;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.message-header, .message-content {
+    background-color: $slate;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px;
+    text-align: left;
+}
+
+.message-header h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.message-content {
+    color: #ccc;
+    padding: 10px;
+    text-align: left;
+    max-height: 200px; 
+    overflow-y: auto; 
+    white-space: pre-wrap; 
+    word-wrap: break-word;
+}
+
+.copy-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #97209bae;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.copy-button:hover {
+    background-color: #38A169;
+}
