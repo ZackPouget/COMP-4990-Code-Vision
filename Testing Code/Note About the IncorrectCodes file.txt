@@ -1,0 +1,1 @@
+In the IncorrectCodes file, you will find lines of code marked with a comment that says "// error". These comments are solely for the tester's reference to know what the error is in the code. Before uploading these files to the application, please make sure to remove those comments.
