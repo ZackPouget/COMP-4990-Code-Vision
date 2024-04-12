@@ -13,7 +13,7 @@ npm install axios
 ```
 ## Environment Variable Setup
 
-Add your OpenAI API key to your environment variable section to your operating system.
+Add your OpenAI API key to the environment variable section of your operating system.
 
 ## Order
 1. Run the server with the command "node server.js"
