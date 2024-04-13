@@ -16,5 +16,6 @@ npm install axios
 Add your OpenAI API key to the environment variable section of your operating system.
 
 ## Order
-1. Run the server with the command "node server.js"
-2. Run the electron app with the command "npm start"
+1. To run the server, you must change the directory by using this command "cd code-vision-server"
+2. Run the server with the command "node server.js"
+3. Run the electron app with the command "npm start"
